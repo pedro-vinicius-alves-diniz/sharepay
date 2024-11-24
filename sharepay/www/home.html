@@ -9,6 +9,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar (Android only) -->
     <meta name="theme-color" content="#2196f3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- Your app title -->
     <title>Template Tab</title>
     <!-- Path to Framework7 Library Bundle CSS -->
@@ -17,7 +22,9 @@
     <link rel="stylesheet" href="css/personalizado.css">
     <!--Ícones Material Design-->
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
-
+    
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -33,15 +40,15 @@
                 <div class="toolbar-inner display-flex">
                     <a href="/home/" class="tab-link link active">
                         <i class="mdi mdi-home"></i>
-                        <span>Link 1</span>
+                        <span>Home</span>
                     </a>
                     <a href="/link2/" class="tab-link link">
-                        <i class="mdi mdi-link"></i>
-                        <span>Link 2</span>
+                        <i class="mdi mdi-credit-card-outline"></i>
+                        <span>Carte</span>
                     </a>
                     <a href="/link3/" class="tab-link link">
                         <i class="mdi mdi-account"></i>
-                        <span>Link 3</span>
+                        <span>Profilo</span>
                     </a>
 
                 </div>
@@ -53,8 +60,10 @@
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-bg"></div>
-                    <div class="navbar-inner justify-content-center">
-                        <div class="title ">Template Tab</div>
+                    <div class="navbar-inner justify-content-start">
+                        <div class="title">
+                            <img class="logo-marca" src="img/SPay.svg" alt="Logo SharePay">
+                        </div>
                     </div>
                 </div>
 
@@ -69,8 +78,8 @@
     </div>
     <!-- Path to Framework7 Library Bundle JS-->
     <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-	<!-- jQuery -->
-	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>

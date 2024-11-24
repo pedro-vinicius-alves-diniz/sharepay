@@ -1,0 +1,12 @@
+:root {
+    --verde: #19c463;
+    --blue: #231AC4;
+}
+
+.title img{
+    margin-top: 12px;
+}
+
+.toolbar-inner{
+    background-color: var(--verde);
+}

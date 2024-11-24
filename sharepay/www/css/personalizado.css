@@ -15,8 +15,9 @@
 	font-weight:bold;    
 }
 
+
 .toolbar-inner .link:not(.active){
-    color:gray;
+    color:rgb(220, 220, 220);
 	font-weight:normal;
 }
 
