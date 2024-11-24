@@ -18,8 +18,8 @@ var app = new Framework7({
   // Add default routes
   routes: [
     {
-      path: '/index/',
-      url: 'index.html',
+      path: '/login/',
+      url: 'login.html',
       animate: false,
       on: {
         pageBeforeIn: function (event, page) {
@@ -37,8 +37,8 @@ var app = new Framework7({
       }
     },
     {
-      path: '/home/',
-      url: 'home.html',
+      path: '/index/',
+      url: 'index.html',
       animate: false,
       on: {
         pageBeforeIn: function (event, page) {
@@ -98,7 +98,7 @@ var app = new Framework7({
 });
 
 //Para testes direto no navegador
-var mainView = app.views.create('.view-main', { url: '/home/' });
+var mainView = app.views.create('.view-main', { url: '/index/' });
 
 //EVENTO PARA SABER O ITEM DO MENU ATUAL
 app.on('routeChange', function (route) {
