@@ -28,15 +28,6 @@ body {
     justify-content: center;
 }
 
-.degrade {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--verde) 100%);
-    -webkit-background-clip: text;
-    /* Aplica o gradiente ao texto */
-    -webkit-text-fill-color: transparent;
-    /* Faz o texto ser transparente, exibindo o fundo */
-    background-clip: text;
-    /* Suporte para navegadores mais recentes */
-}
 
 #login-accedi {
     margin: 2rem;

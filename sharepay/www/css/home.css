@@ -3,10 +3,67 @@
     --blue: #231AC4;
 }
 
+body{
+    background-color: #fff;
+}
+.navbar-inner{
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title{
+    width: 100%;
+    display: flex;
+}
 .title img{
     margin-top: 12px;
+}
+.title span{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .toolbar-inner{
     background-color: var(--verde);
 }
+
+.btn-creare{
+    max-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    padding: .2rem;
+    
+    color: #fff;
+    background-image: linear-gradient(135deg, var(--blue) 0%, black 100%);
+    
+    border: none;
+    border-radius: 20px;
+
+    
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-image .3s ease, transform .3s ease;
+}
+    .btn-creare:hover{
+        transform: scale(1.1);
+        background-image: linear-gradient(135deg, var(--blue) 0%, var(--verde) 100%);
+    }
+
+.btn-creare span{
+    font-size: 1.7rem;
+}
+
+/* LISTA FONDI */
+.lista-fondi{
+    margin-top: 2rem;
+}
+.lista-fondi h1{
+    font-size: 1rem;
+}
+
+
+/* FIM LISTA FONDI */

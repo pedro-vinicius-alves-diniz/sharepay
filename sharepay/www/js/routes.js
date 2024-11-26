@@ -98,7 +98,7 @@ var app = new Framework7({
 });
 
 //Para testes direto no navegador
-var mainView = app.views.create('.view-main', { url: '/index/' });
+var mainView = app.views.create('.view-main', { url: '/login/' });
 
 //EVENTO PARA SABER O ITEM DO MENU ATUAL
 app.on('routeChange', function (route) {
@@ -116,12 +116,12 @@ app.on('routeChange', function (route) {
 
 function onDeviceReady() {
   //Quando estiver rodando no celular
-  var mainView = app.views.create('.view-main', { url: '/home/' });
+  var mainView = app.views.create('.view-main', { url: '/login/' });
 
   //COMANDO PARA "OUVIR" O BOTAO VOLTAR NATIVO DO ANDROID 	
   document.addEventListener("backbutton", function (e) {
 
-    if (mainView.router.currentRoute.path === '/home/') {
+    if (mainView.router.currentRoute.path === '/login/') {
       e.preventDefault();
       app.dialog.confirm('Deseja sair do aplicativo?', function () {
         navigator.app.exitApp();
