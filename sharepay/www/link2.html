@@ -34,10 +34,13 @@
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-bg"></div>
-                    <div class="navbar-inner justify-content-start">
-                        <div class="title ">
+                    <div class="navbar-inner justify-content-center">
+                        <div class="title">
                             <img class="logo-marca" src="img/SPay.svg" alt="Logo SharePay">
-                            <span class="mdi mdi-bell-outline"></span>
+                            <div>
+                                <a id="help" href=""><span class="mdi mdi-chat-question"></span></a>
+                                <a id="notification" href=""><span class="mdi mdi-bell-outline"></span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,7 +48,31 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
-                        Conteúdo do link 2
+                        <a class="btn-creare" href="#">
+                            <span class="mdi mdi-plus-circle"></span>
+                            NUOVA CARTA
+                        </a>
+
+                        <section class="container">
+                            <h1>Le mie carte</h1>
+
+                            <ul class="lista" id="list-cards">
+                                <li class="item" id="card">
+                                    <a href="#">
+                                        <span class="network">Mastercard</span>
+                                        <span class="number">****<span>9827</span></span>
+                                        <span class="expires">09/29</span>
+                                    </a>
+                                </li>
+                                <li class="item" id="card">
+                                    <a href="#">
+                                        <span class="network">Visa</span>
+                                        <span class="number">****<span>2371</span></span>
+                                        <span class="expires">05/31</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
                 </div>
             </div>

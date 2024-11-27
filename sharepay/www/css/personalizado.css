@@ -1,5 +1,6 @@
 .toolbar{
     height: 80px;
+    background-color: var(--verde);
 }
 
 .tab-link{
@@ -8,6 +9,16 @@
     flex-flow: column wrap;
 }
 
+.toolbar-inner{
+    max-width: 768px;
+    margin: 0 auto;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
 .toolbar-inner .link{    
     flex:1;
     height: 80px;  

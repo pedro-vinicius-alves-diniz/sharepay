@@ -34,10 +34,13 @@
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-bg"></div>
-                    <div class="navbar-inner justify-content-start">
-                        <div class="title ">
+                    <div class="navbar-inner justify-content-center">
+                        <div class="title">
                             <img class="logo-marca" src="img/SPay.svg" alt="Logo SharePay">
-                            <span class="mdi mdi-bell-outline"></span>
+                            <div>
+                                <a id="help" href=""><span class="mdi mdi-chat-question"></span></a>
+                                <a id="notification" href=""><span class="mdi mdi-bell-outline"></span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,7 +48,44 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
-                        Conteúdo do link 3
+                        <ul id="list-profile">
+                            <li >
+                                <a href="">
+                                    <span class="mdi mdi-account-circle"></span>
+                                    Modifica profilo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="mdi mdi-security"></span>
+                                    Password e sicurezza
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="mdi mdi-translate"></span>
+                                    Lingua
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="mdi mdi-message-alert"></span>
+                                    Invia feedback
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="mdi mdi-file-sign"></span>
+                                    Termini e condizioni
+                                </a>
+                            </li>
+                            <li id="logout">
+                                <a href="">
+                                    <span class="mdi mdi-logout"></span>
+                                    Esci
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
