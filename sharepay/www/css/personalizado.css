@@ -8,8 +8,6 @@
     flex-flow: column wrap;
 }
 
-
-
 .toolbar-inner .link{    
     flex:1;
     height: 80px;  
@@ -20,21 +18,15 @@
 .toolbar-inner .active{
     background: linear-gradient(180deg, var(--blue) 0%, black 100%);
     -webkit-background-clip: text;
-    /* Aplica o gradiente ao texto */
     -webkit-text-fill-color: transparent;
-    /* Faz o texto ser transparente, exibindo o fundo */
     background-clip: text;
-    /* Suporte para navegadores mais recentes */
 }
 
 .toolbar-inner .link:not(.active){
     background: linear-gradient(180deg, rgb(79, 79, 79) 0%, black 100%);
     -webkit-background-clip: text;
-    /* Aplica o gradiente ao texto */
     -webkit-text-fill-color: transparent;
-    /* Faz o texto ser transparente, exibindo o fundo */
     background-clip: text;
-    /* Suporte para navegadores mais recentes */
 	font-weight:700;
 }
 
