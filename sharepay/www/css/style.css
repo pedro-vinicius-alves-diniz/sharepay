@@ -77,9 +77,11 @@ body {
     color: black;
 }
 
-.btn:hover {
-    filter: brightness(1.2);
-    transform: scale(1.1);
+.passord-dimenticata{
+    text-decoration: none;
+    color: var(--blue);
+    font-size: .8rem;
+    font-weight: 600;
 }
 
 #line {
@@ -97,18 +99,25 @@ body {
     font-size: .8rem;
 }
 
-.button:hover {
-    transform: scale(1.1);
-    color: var(--blue);
+
+.animation{
+    animation: warn-input .4s alternate;
 }
 
-.passord-dimenticata{
-    text-decoration: none;
-    color: var(--blue);
-    font-size: .8rem;
-    font-weight: 600;
+@keyframes warn-input {
+    0%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(30px);
+    }
+    50%{
+        transform: translateX(-30px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
-
 /* FIM INDEX/LOGIN */
 
 

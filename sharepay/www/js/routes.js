@@ -18,25 +18,6 @@ var app = new Framework7({
   // Add default routes
   routes: [
     {
-      path: '/login/',
-      url: 'login.html',
-      animate: false,
-      on: {
-        pageBeforeIn: function (event, page) {
-          // fazer algo antes da página ser exibida
-        },
-        pageAfterIn: function (event, page) {
-          // fazer algo depois da página ser exibida
-        },
-        pageInit: function (event, page) {
-          // fazer algo quando a página for inicializada
-        },
-        pageBeforeRemove: function (event, page) {
-          // fazer algo antes da página ser removida do DOM
-        },
-      }
-    },
-    {
       path: '/index/',
       url: 'index.html',
       animate: false,
@@ -56,8 +37,8 @@ var app = new Framework7({
       }
     },
     {
-      path: '/link2/',
-      url: 'link2.html',
+      path: '/home/',
+      url: 'home.html',
       animate: false,
       on: {
         pageBeforeIn: function (event, page) {
@@ -75,8 +56,27 @@ var app = new Framework7({
       }
     },
     {
-      path: '/link3/',
-      url: 'link3.html',
+      path: '/carte/',
+      url: 'carte.html',
+      animate: false,
+      on: {
+        pageBeforeIn: function (event, page) {
+          // fazer algo antes da página ser exibida
+        },
+        pageAfterIn: function (event, page) {
+          // fazer algo depois da página ser exibida
+        },
+        pageInit: function (event, page) {
+          // fazer algo quando a página for inicializada
+        },
+        pageBeforeRemove: function (event, page) {
+          // fazer algo antes da página ser removida do DOM
+        },
+      }
+    },
+    {
+      path: '/profile/',
+      url: 'profile.html',
       animate: false,
       on: {
         pageBeforeIn: function (event, page) {
@@ -98,7 +98,7 @@ var app = new Framework7({
 });
 
 //Para testes direto no navegador
-var mainView = app.views.create('.view-main', { url: '/login/' });
+var mainView = app.views.create('.view-main', { url: '/index/' });
 
 //EVENTO PARA SABER O ITEM DO MENU ATUAL
 app.on('routeChange', function (route) {
@@ -116,12 +116,12 @@ app.on('routeChange', function (route) {
 
 function onDeviceReady() {
   //Quando estiver rodando no celular
-  var mainView = app.views.create('.view-main', { url: '/login/' });
+  var mainView = app.views.create('.view-main', { url: '/index/' });
 
   //COMANDO PARA "OUVIR" O BOTAO VOLTAR NATIVO DO ANDROID 	
   document.addEventListener("backbutton", function (e) {
 
-    if (mainView.router.currentRoute.path === '/login/') {
+    if (mainView.router.currentRoute.path === '/index/') {
       e.preventDefault();
       app.dialog.confirm('Deseja sair do aplicativo?', function () {
         navigator.app.exitApp();
