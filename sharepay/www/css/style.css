@@ -72,6 +72,9 @@ body {
     background-color: var(--verde);
     transition: filter .3s ease;
     transition: transform .3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 .btn:hover {
@@ -97,6 +100,13 @@ body {
 .button:hover {
     transform: scale(1.1);
     color: var(--blue);
+}
+
+.passord-dimenticata{
+    text-decoration: none;
+    color: var(--blue);
+    font-size: .8rem;
+    font-weight: 600;
 }
 
 /* FIM INDEX/LOGIN */
