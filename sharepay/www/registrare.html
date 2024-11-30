@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/SPay.svg" type="image/x-icon">
 
-    <script src="script.js" defer></script>
+    <style>
+        .warn-input::placeholder{
+            color: red;
+        }
+    </style>
     <title>SharePay</title>
 </head>
 
@@ -31,24 +35,52 @@
         <p>O</p>
 
         <form class="login-form">
-            <input type="text" placeholder="Nome" required>
-            <input type="text" placeholder="Cognome" required>
+            <input type="text" placeholder="Nome" id="iname">
+            <input type="text" placeholder="Cognome" id="ilastname">
             <div class="data-nascita">
                 <label for="datanasc">Data di nascita</label>
-                <input type="date" name="datanasc" id="idatanasc" placeholder="Data di nascita" required>
+                <input type="date" name="datanasc" id="idatanasc" placeholder="Data di nascita">
             </div>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+            <input type="email" placeholder="Email" id="iemail">
+            <input type="password" placeholder="Password" id="ipassword">
 
             <div class="condizioni">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="icheck">
                 <span>Accetto i <a href="">termini e condizioni d'uso</a> e la <a href="">politica di riservatezza</a>.</span>
             </div>
-            <a href="home.html" id="btn-registro" class="btn">Registrare</a>
+            <button id="btn-registro" class="btn" type="submit">Registrare</button>
         </form>
         
         
     </section>
+
+    <script>
+        const btnRegistro = document.getElementById('btn-registro');
+
+        const nameInput = document.getElementById('iname');
+        const lasInput = document.getElementById('ilastname');
+        const nascInput = document.getElementById('idatanasc');
+        const emailInput = document.getElementById('iemail');
+        const passwordInput = document.getElementById('ipassword');
+        const checkInput = document.getElementById('icheck');
+
+        btnRegistro.addEventListener('click', () => {
+            event.preventDefault();
+
+            if(nameInput.value == ''){
+                nameInput.style.border = '2px solid red';
+                nameInput.style.outlineColor = 'red';
+                nameInput.classList.add('warn-input');
+                nameInput.classList.add('animation');
+
+                console.log('Compila l`email per accedere!');
+                setTimeout(() => {
+                    emailInput.classList.remove('animation');
+                },500)
+            }
+        })
+
+    </script>
 </body>
 
 </html>
