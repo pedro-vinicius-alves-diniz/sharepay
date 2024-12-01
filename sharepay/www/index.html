@@ -9,11 +9,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/personalizado.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/SPay.svg" type="image/x-icon">
 
     <style>
-        .warn-input::placeholder{
+        .warn-input::placeholder {
             color: red;
         }
     </style>
@@ -22,34 +28,42 @@
 </head>
 
 <body id="index">
-    <section id="login">
-        <img src="img/SharePay.svg" width="250" alt="Logo SharePay">
 
-        <p id="login-accedi">Accedi</p>
+    <div id="app">
+        <div id="login" class="view view-main">
+            <img src="img/SharePay.svg" width="250" alt="Logo SharePay">
+            <p id="login-accedi">Accedi</p>
+            <form class="login-form">
+                <input type="email" name="email" id="iemail" placeholder="Inserisci la tua email">
+                <input type="password" name="password" id="ipassword" placeholder="Inserisci la tua password">
+                <button class="btn" id="btn-accedere" type="submit">Accedere</button>
+                <a class="passord-dimenticata" href="#">Ho dimenticato la password!</a>
+            </form>
+            <div id="line"></div>
+            <a class="button" href="registrare.html">Registrati ora</a>
+        </div>
+    </div>
 
-        <form class="login-form">
-            <input type="email" name="email" id="iemail" placeholder="Inserisci la tua email">
-            <input type="password" name="password" id="ipassword" placeholder="Inserisci la tua password" >
-            <button class="btn" id="btn-accedere" type="submit">Accedere</button>
-
-            <a class="passord-dimenticata" href="#">Ho dimenticato la password!</a>
-        </form>
-
-        <div id="line"></div>
-
-        <a class="button" href="registrare.html">Registrati ora</a>
-    </section>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
     <script>
+        const db = null
+
         const btnAccedere = document.getElementById("btn-accedere");
         const emailInput = document.getElementById('iemail');
         const passwordInput = document.getElementById('ipassword');
 
         btnAccedere.addEventListener("click", () => {
             event.preventDefault();
+            
+            if (emailInput.value == '') {
 
-            if(emailInput.value == ''){
-                
                 emailInput.style.border = '2px solid red';
                 emailInput.style.outlineColor = 'red';
                 emailInput.classList.add('warn-input');
@@ -59,8 +73,8 @@
 
                 setTimeout(() => {
                     emailInput.classList.remove('animation');
-                },500)
-            } if(passwordInput.value == ''){
+                }, 500)
+            } if (passwordInput.value == '') {
                 passwordInput.style.border = '2px solid red';
                 passwordInput.style.outlineColor = 'red';
                 passwordInput.classList.add('warn-input');
@@ -69,14 +83,13 @@
                 console.log('Compila la password per accedere!');
                 setTimeout(() => {
                     passwordInput.classList.remove('animation');
-                },500)
-            }else{
+                }, 500)
+            } else {
                 console.log('Login realizado com sucesso.')
 
                 window.location.href = 'home.html'
             }
         })
-
     </script>
 </body>
 
