@@ -13,118 +13,58 @@
     <link rel="shortcut icon" href="img/SPay.svg" type="image/x-icon">
 
     <style>
-        .warn-input::placeholder{
+        .warn-input::placeholder {
             color: red;
         }
     </style>
+
+    <script type="module" src="js/registrare.js" defer></script>
     <title>SharePay</title>
 </head>
 
 <body id="registrare">
-    <section id="registro">
-        <img class="logo-registrare" src="img/SharePay.svg" width="250" alt="Logo SharePay">
-        <a class="button" href="index.html">Ho già un account</a>
-        <div id="line"></div>
-
-        <div class="social-medias">
-            <a href=""><img src="img/icons8-gmail-48.png" alt="Gmail" width="35"></a>
-            <a href=""><img src="img/icons8-apple-50.png" alt="Apple" width="35"></a>
-            <a href=""><img src="img/icons8-facebook-48.png" alt="Facebook" width="35"></a>
+    <div id="app">
+        <div id="registro" class="view view-main">
+            <img class="logo-registrare" src="img/SharePay.svg" width="250" alt="Logo SharePay">
+            <a id="btn-have-acccount" class="button" href="./index.html">Ho già un account</a>
+            <div id="line"></div>
+    
+            <div class="social-medias">
+                <a href=""><img src="img/icons8-gmail-48.png" alt="Gmail" width="35"></a>
+                <a href=""><img src="img/icons8-apple-50.png" alt="Apple" width="35"></a>
+                <a href=""><img src="img/icons8-facebook-48.png" alt="Facebook" width="35"></a>
+            </div>
+    
+            <p>O</p>
+    
+            <form class="login-form">
+                <input type="email" placeholder="Email" id="iemail">
+                <input type="password" placeholder="Password" id="ipassword">
+                <input type="text" placeholder="Nome" id="iname">
+                <input type="text" placeholder="Cognome" id="ilastname">
+                <div class="data-nascita">
+                    <label for="datanasc">Data di nascita</label>
+                    <input type="date" name="datanasc" id="idatanasc" placeholder="Data di nascita">
+                </div>
+                <div class="condizioni">
+                    <input type="checkbox" name="" id="icheck">
+                    <span>Accetto i <a href="">termini e condizioni d'uso</a> e la <a href="">politica di
+                            riservatezza</a>.</span>
+                </div>
+    
+                <a id="btn-registro" class="btn">Registrare</a>
+            </form>
         </div>
+    </div>
+    
 
-        <p>O</p>
-
-        <form class="login-form">
-            <input type="text" placeholder="Nome" id="iname">
-            <input type="text" placeholder="Cognome" id="ilastname">
-            <div class="data-nascita">
-                <label for="datanasc">Data di nascita</label>
-                <input type="date" name="datanasc" id="idatanasc" placeholder="Data di nascita">
-            </div>
-            <input type="email" placeholder="Email" id="iemail">
-            <input type="password" placeholder="Password" id="ipassword">
-
-            <div class="condizioni">
-                <input type="checkbox" name="" id="icheck">
-                <span>Accetto i <a href="">termini e condizioni d'uso</a> e la <a href="">politica di riservatezza</a>.</span>
-            </div>
-            <button id="btn-registro" class="btn" type="submit">Registrare</button>
-        </form>
-        
-        
-    </section>
-
-    <script>
-        const btnRegistro = document.getElementById('btn-registro');
-
-        const nameInput = document.getElementById('iname');
-        const lasInput = document.getElementById('ilastname');
-        const nascInput = document.getElementById('idatanasc');
-        const emailInput = document.getElementById('iemail');
-        const passwordInput = document.getElementById('ipassword');
-        const checkInput = document.getElementById('icheck');
-
-        btnRegistro.addEventListener('click', () => {
-            event.preventDefault();
-
-            if(nameInput.value == ''){
-                nameInput.style.border = '2px solid red';
-                nameInput.style.outlineColor = 'red';
-                nameInput.classList.add('warn-input');
-                nameInput.classList.add('animation');
-
-                console.log('Compila l`email per accedere!');
-                setTimeout(() => {
-                    nameInput.classList.remove('animation');
-                },500)
-            }if(lasInput.value == ''){
-                lasInput.style.border = '2px solid red';
-                lasInput.style.outlineColor = 'red';
-                lasInput.classList.add('warn-input');
-                lasInput.classList.add('animation');
-
-                console.log('Compila l`email per accedere!');
-                setTimeout(() => {
-                    lasInput.classList.remove('animation');
-                },500)
-            }if(nascInput.value == ''){
-                nascInput.style.border = '2px solid red';
-                nascInput.style.outlineColor = 'red';
-                nascInput.classList.add('warn-input');
-                nascInput.classList.add('animation');
-
-                console.log('Compila l`email per accedere!');
-                setTimeout(() => {
-                    nascInput.classList.remove('animation');
-                },500)
-            }if(emailInput.value == ''){
-                emailInput.style.border = '2px solid red';
-                emailInput.style.outlineColor = 'red';
-                emailInput.classList.add('warn-input');
-                emailInput.classList.add('animation');
-
-                console.log('Compila l`email per accedere!');
-                setTimeout(() => {
-                    emailInput.classList.remove('animation');
-                },500)
-            }if(passwordInput.value == ''){
-                passwordInput.style.border = '2px solid red';
-                passwordInput.style.outlineColor = 'red';
-                passwordInput.classList.add('warn-input');
-                passwordInput.classList.add('animation');
-                console.log('Compila l`email per accedere!');
-                setTimeout(() => {
-                    passwordInput.classList.remove('animation');
-                },500)
-            }else if(!checkInput.checked){
-                alert('Per continuare devi accettare i termini e condizioni.')
-            }else{
-                alert("Registro realizzato con successo!")
-                window.location.href = 'index.html';
-            }
-        })
-
-    </script>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@
             color: red;
         }
     </style>
-
+    <script type="module" src="js/index.js"></script>
     <title>SharePay</title>
 </head>
 
@@ -40,7 +40,7 @@
                 <a class="passord-dimenticata" href="#">Ho dimenticato la password!</a>
             </form>
             <div id="line"></div>
-            <a class="button" href="registrare.html">Registrati ora</a>
+            <button id="btn-registrare" class="button" href="./registrare.html">Registrati ora</button>
         </div>
     </div>
 
@@ -51,46 +51,6 @@
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-
-    <script>
-        const db = null
-
-        const btnAccedere = document.getElementById("btn-accedere");
-        const emailInput = document.getElementById('iemail');
-        const passwordInput = document.getElementById('ipassword');
-
-        btnAccedere.addEventListener("click", () => {
-            event.preventDefault();
-            
-            if (emailInput.value == '') {
-
-                emailInput.style.border = '2px solid red';
-                emailInput.style.outlineColor = 'red';
-                emailInput.classList.add('warn-input');
-                emailInput.classList.add('animation');
-
-                console.log('Compila l`email per accedere!');
-
-                setTimeout(() => {
-                    emailInput.classList.remove('animation');
-                }, 500)
-            } if (passwordInput.value == '') {
-                passwordInput.style.border = '2px solid red';
-                passwordInput.style.outlineColor = 'red';
-                passwordInput.classList.add('warn-input');
-                passwordInput.classList.add('animation');
-
-                console.log('Compila la password per accedere!');
-                setTimeout(() => {
-                    passwordInput.classList.remove('animation');
-                }, 500)
-            } else {
-                console.log('Login realizado com sucesso.')
-
-                window.location.href = 'home.html'
-            }
-        })
-    </script>
 </body>
 
 </html>

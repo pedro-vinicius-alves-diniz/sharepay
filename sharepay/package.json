@@ -18,11 +18,13 @@
     "cordova-sqlite-storage": "^6.1.0"
   },
   "cordova": {
-    "platforms": [
-      "android"
-    ],
+    "platforms": [],
     "plugins": {
       "cordova-sqlite-storage": {}
     }
+  },
+  "dependencies": {
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   }
 }
