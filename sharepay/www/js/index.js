@@ -68,6 +68,7 @@ btnAccedere.addEventListener("click", () => {
             console.error('Error adding document:', error);
         });
 
+        window.location.href = "home.html"
         console.log('Login realizado com sucesso.')
     }
 })
