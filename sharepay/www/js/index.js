@@ -64,8 +64,9 @@ btnAccedere.addEventListener("click", () => {
                             window.location.href = 'home.html';
                             alert("Login realizzato con successo!");
                         }else{
+                            passwordInput.value = "";
+                            passwordInput.focus();
                             alert("Senha incorreta. Tente novamente.");
-                            passwordInput.value = ""
                         }
                     }else{
                         alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
