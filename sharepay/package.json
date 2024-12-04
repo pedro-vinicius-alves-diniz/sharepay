@@ -24,6 +24,7 @@
     }
   },
   "dependencies": {
+    "firebase": "^11.0.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   }
