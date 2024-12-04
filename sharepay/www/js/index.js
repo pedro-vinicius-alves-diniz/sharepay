@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, setDoc } from "../../node_modules/firebase/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, setDoc, getDoc } from "../../node_modules/firebase/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,8 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-const usersCollection = collection(db, "utenti");
 
 
 const btnAccedere = document.getElementById("btn-accedere");
@@ -54,13 +52,42 @@ btnAccedere.addEventListener("click", () => {
             passwordInput.classList.remove('animation');
         }, 500)
     } else {
-        const idUtente = emailInput.value
-        
+        async function getData() {
+            const querySnapshot = await getDocs(collection(db, "utenti"));
+            if(querySnapshot.empty){
+                alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+            }else{
+                querySnapshot.forEach((doc) => {
+                    var utente = doc.id
+                    if(utente == emailInput.value){
+                        if(doc.data().password == passwordInput.value){
+                            window.location.href = 'home.html';
+                            alert("Login realizzato con successo!");
+                        }else{
+                            alert("Senha incorreta. Tente novamente.");
+                            passwordInput.value = ""
+                        }
+                    }else{
+                        alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+                    }
+                })
+            }
+        };
 
-        
+        getData();
 
-        window.location.href = "home.html"
-        console.log('Login realizado com sucesso.')
+        // const idUtente = emailInput.value
+
+        // setDoc(doc(db, "utenti", idUtente), {
+        //     email: emailInput.value,
+        //     password: passwordInput.value
+        // })
+        // .then(() => {
+        //     console.log('Document written with ID:', idUtente);
+        // })
+        // .catch(error => {
+        //     console.error('Error adding document:', error);
+        // });
     }
 })
 
