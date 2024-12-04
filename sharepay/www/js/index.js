@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, setDoc, getDoc } from "../../node_modules/firebase/firebase-firestore.js";
-// TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -21,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
+//TODO: AGGIUNGERE COMMENTI SUL CODICE DI QUESTO FILE
 const btnAccedere = document.getElementById("btn-accedere");
 const emailInput = document.getElementById('iemail');
 const passwordInput = document.getElementById('ipassword');

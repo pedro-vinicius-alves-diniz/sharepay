@@ -63,6 +63,8 @@ btnRegistro.addEventListener('click', (event) => {
     } else if (!checkInput.checked) {
         alert('Per continuare devi accettare i termini e condizioni.')
     } else {
+        //TODO: CONTROLLARE SE L'EMAIL INSERITO È GIÀ REGISTRATO
+        //TODO: SE L'EMAIL NON È GIÀ REGISTRATO, AGGIUNGERE I DATI INSERITI SU FIRESTORE
         alert("Registro realizzato con successo!")
         window.location.href = 'index.html';
     }
