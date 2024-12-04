@@ -55,18 +55,9 @@ btnAccedere.addEventListener("click", () => {
         }, 500)
     } else {
         const idUtente = emailInput.value
+        
 
-
-        setDoc(doc(db, "utenti", idUtente), {
-            email: emailInput.value,
-            password: passwordInput.value
-        })
-        .then(() => {
-            console.log('Document written with ID:', idUtente);
-        })
-        .catch(error => {
-            console.error('Error adding document:', error);
-        });
+        
 
         window.location.href = "home.html"
         console.log('Login realizado com sucesso.')
