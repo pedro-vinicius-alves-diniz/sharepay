@@ -20,16 +20,36 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-//TODO: AGGIUNGERE COMMENTI SUL CODICE DI QUESTO FILE
+// DECLARING VARIABLES 
 const btnAccedere = document.getElementById("btn-accedere");
 const emailInput = document.getElementById('iemail');
 const passwordInput = document.getElementById('ipassword');
 const btnRegistrare = document.getElementById("btn-registrare")
 
+
+
+// EVENTS
+// TODO: DO EVENT INPUTS FOCUS
+
+// EVENT WHEN LOGIN BUTTON IS CLICKED
 btnAccedere.addEventListener("click", () => {
     event.preventDefault();
 
-    if (emailInput.value == '') {
+    checkInputs();
+})
+
+
+// REGISTER BUTTON EVENT
+btnRegistrare.addEventListener("click", function () {
+    window.location.href = 'registrare.html'
+}) 
+
+
+
+// FUNCTIONS
+// FUNCTION CHECK IF THE INPUTS ARE EMPTY
+function checkInputs(){
+    if (emailInput.value == '') { // IF EMAIL INPUT IS EMPTY D0
 
         emailInput.style.border = '2px solid red';
         emailInput.style.outlineColor = 'red';
@@ -41,7 +61,7 @@ btnAccedere.addEventListener("click", () => {
         setTimeout(() => {
             emailInput.classList.remove('animation');
         }, 500)
-    } if (passwordInput.value == '') {
+    } if (passwordInput.value == '') { // IF PASSWORD INPUT IS EMPTY DO
         passwordInput.style.border = '2px solid red';
         passwordInput.style.outlineColor = 'red';
         passwordInput.classList.add('warn-input');
@@ -52,46 +72,37 @@ btnAccedere.addEventListener("click", () => {
             passwordInput.classList.remove('animation');
         }, 500)
     } else {
-        async function getData() {
-            const querySnapshot = await getDocs(collection(db, "utenti"));
-            if(querySnapshot.empty){
-                alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
-            }else{
-                querySnapshot.forEach((doc) => {
-                    var utente = doc.id
-                    if(utente == emailInput.value){
-                        if(doc.data().password == passwordInput.value){
-                            window.location.href = 'home.html';
-                            alert("Login realizzato con successo!");
-                        }else{
-                            passwordInput.value = "";
-                            passwordInput.focus();
-                            alert("Senha incorreta. Tente novamente.");
-                        }
-                    }else{
-                        alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
-                    }
-                })
-            }
-        };
-
-        getData();
-
-        // const idUtente = emailInput.value
-
-        // setDoc(doc(db, "utenti", idUtente), {
-        //     email: emailInput.value,
-        //     password: passwordInput.value
-        // })
-        // .then(() => {
-        //     console.log('Document written with ID:', idUtente);
-        // })
-        // .catch(error => {
-        //     console.error('Error adding document:', error);
-        // });
+        
+        checkEmail();
     }
-})
+}
 
-btnRegistrare.addEventListener("click", function () {
-    window.location.href = 'registrare.html'
-}) 
+// FUNCTION CHECK EMAIL IS REGISTRED
+async function checkEmail() { 
+    const querySnapshot = await getDocs(collection(db, "utenti"));
+
+    if(querySnapshot.empty){ // IF THERE IS NOT EMAIL REGISTRED
+        alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+    }else{
+        querySnapshot.forEach((doc) => {
+            var utente = doc.id
+            if(utente == emailInput.value){ // IF THE EMAIL IS REGISTRED
+                checkPassword(doc);
+            }else{
+                alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+            }
+        })
+    }
+};
+
+// FUNCTION CHECK IF THE PASSWORD IS CORRECT
+function checkPassword(doc){
+    if(doc.data().password == passwordInput.value){ 
+        window.location.href = 'home.html';
+        alert("Login realizzato con successo!");
+    }else{
+        passwordInput.value = "";
+        passwordInput.focus();
+        alert("Senha incorreta. Tente novamente.");
+    }
+}
