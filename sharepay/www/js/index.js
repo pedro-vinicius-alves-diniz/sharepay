@@ -82,14 +82,14 @@ async function checkEmail() {
     const querySnapshot = await getDocs(collection(db, "utenti"));
 
     if(querySnapshot.empty){ // IF THERE IS NOT EMAIL REGISTRED
-        alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+        alert("Email o password sbagliate.");
     }else{
         querySnapshot.forEach((doc) => {
             var utente = doc.id
             if(utente == emailInput.value){ // IF THE EMAIL IS REGISTRED
                 checkPassword(doc);
             }else{
-                alert("Email non registrato! Registrati gratuitamente per accedere la nostra app!");
+                alert("Email o password sbagliate.");
             }
         })
     }
@@ -103,6 +103,7 @@ function checkPassword(doc){
     }else{
         passwordInput.value = "";
         passwordInput.focus();
-        alert("Senha incorreta. Tente novamente.");
+        alert("Email o password sbagliate.");
     }
 }
+
