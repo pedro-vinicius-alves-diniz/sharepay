@@ -21,18 +21,17 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
 
+
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <!-- App root element -->
     <div id="app">
-
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Initial Page, "data-name" contains page name -->
             <div data-name="link3" class="page">
-
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-bg"></div>
@@ -46,12 +45,11 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
                         <ul id="list-profile">
-                            <li >
+                            <li>
                                 <a href="">
                                     <span class="mdi mdi-account-circle"></span>
                                     Modifica profilo
@@ -84,10 +82,10 @@
 
                             <!--TODO: IMPLEMENTARE L'AZIONE DI USCIRE, CHE CONSISTE IN TORNARE ALLA SCHERMATA DI LOGIN -->
                             <li id="logout">
-                                <a href="">
+                                <button id="btn-exit">
                                     <span class="mdi mdi-logout"></span>
                                     Esci
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -95,10 +93,8 @@
             </div>
         </div>
     </div>
-    <!-- Path to Framework7 Library Bundle JS-->
-    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-	<!-- jQuery -->
-	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+
+
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>

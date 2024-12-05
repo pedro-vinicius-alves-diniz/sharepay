@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, setDoc, getDoc } from "../../node_modules/firebase/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js   ";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -29,8 +29,6 @@ const btnRegistrare = document.getElementById("btn-registrare")
 
 
 // EVENTS
-// TODO: DO EVENT INPUTS FOCUS
-
 // EVENT WHEN LOGIN BUTTON IS CLICKED
 btnAccedere.addEventListener("click", () => {
     event.preventDefault();
@@ -99,7 +97,7 @@ async function checkEmail() {
 function checkPassword(doc){
     if(doc.data().password == passwordInput.value){ 
         window.location.href = 'home.html';
-        alert("Login realizzato con successo!");
+        
     }else{
         passwordInput.value = "";
         passwordInput.focus();
